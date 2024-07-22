@@ -39,7 +39,7 @@ class OffreCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        
+        CRUD::setFromDb();
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -57,6 +57,7 @@ class OffreCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(OffreRequest::class);
+        CRUD::setFromDb();
 
         
 
