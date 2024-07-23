@@ -16,6 +16,12 @@ class Offre extends Model
     */
 
     protected $table = 'offres';
+    protected $fillable = [
+        'titre',
+        'description',
+        'visibilite',
+        'context',
+    ];
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
