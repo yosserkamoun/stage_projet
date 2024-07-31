@@ -40,6 +40,13 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+
+        
+        'encadreur' => [
+                'driver' => 'session',
+                'provider' => 'encadreurs',
+    ],
     ],
 
     /*
@@ -64,6 +71,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+
+
+        'encadreurs' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Encadreur::class,]
 
         // 'users' => [
         //     'driver' => 'database',
@@ -93,6 +105,12 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+        'encadreurs' => [
+        'provider' => 'encadreurs',
+        'table' => 'password_resets',
+        'expire' => 60,
+        'throttle' => 60,
+    ],
     ],
 
     /*
@@ -109,3 +127,4 @@ return [
     'password_timeout' => 10800,
 
 ];
+

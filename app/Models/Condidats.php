@@ -5,7 +5,7 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Offre extends Model
+class Condidats extends Model
 {
     use CrudTrait;
 
@@ -15,21 +15,17 @@ class Offre extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'offres';
-    protected $fillable = [
-        'titre',
-        'description',
-        'visibilite',
-        'context',
-    ];
-    public function condidats()
-    {
-        return $this->hasMany(Condidats::class);
-    }
-    protected $primaryKey = 'id';
+    protected $table = 'condidats';
+    // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    public function offre()
+    {
+        return $this->belongsTo(Offre::class);
+    }
+    protected $fillable = [
+        'nom', 'prenom', 'telephone', 'email', 'cv', 'offre_id',
+    ];
     // protected $hidden = [];
     // protected $dates = [];
 

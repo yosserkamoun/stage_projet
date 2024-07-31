@@ -128,20 +128,8 @@
                 </div>
             </div>
         </div>
-        @extends('layouts.app')
 
-@section('content')
-    <h1>Offres de stage</h1>
 
-    @foreach($offres as $offre)
-        <div>
-            <h2><a href="{{ route('offre_stages.show', $offre->id) }}">{{ $offre->titre }}</a></h2>
-            <p>{{ $offre->description }}</p>
-            <p>visibilite : {{ $offre->visibilite }}</p>
-            <p>context: {{ $offre->context }}</p>
-        </div>
-    @endforeach
-@endsection
    
     </body>
 </html>

@@ -5,3 +5,5 @@
 
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('offre') }}"><i class="nav-icon la la-question"></i> Offres</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('condidats') }}"><i class="nav-icon la la-question"></i> Condidats</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('encadreur') }}"><i class="nav-icon la la-question"></i> Encadreurs</a></li>

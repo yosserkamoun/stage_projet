@@ -9,37 +9,49 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-                <span class="fs-4">Gestion des Stagiaires</span>
-            </a>
-            <ul class="nav nav-pills">
-                <li class="nav-item"><a href="{{ url('/') }}" class="nav-link active" aria-current="page">Home</a></li>
-                <li class="nav-item"><a href="{{ url('/about') }}" class="nav-link">À propos</a></li>
-                <li class="nav-item"><a href="{{ url('/contact') }}" class="nav-link">Contact</a></li>
-            </ul>
-        </header>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+<header class="mb-auto">
+    <div>
+    
+        <h3 class="float-md-start mb-0">Gestion des Stagiaires</h3>
+    <nav class="nav nav-masthead justify-content-center float-md-end">
+       <a class="btn btn-light rounded-pill px-3  "aria-current="page"  href="{{ route('home.index') }}"  >Accueil</a>
+       <a class="btn btn-light rounded-pill px-3"href="{{ route('offre_stage.index') }}" >Nos Offres</a>
+       <a class="btn btn-light rounded-pill px-3"href="{{ url('/contact') }}" >Contact</a>
+       <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
+                  <a class="btn btn-light rounded-pill px-3" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Login As..</a>
+                  <div class="dropdown-menu">
+                  <a class="dropdown-item" href="{{ url('/admin/login') }}">Admin</a>
+                  <a class="dropdown-item" href="{{ route('encadreur.login') }}">Encadreur</a>
+                   
+                </li>
+              </li>
+        
+    </nav>
+</div>
+</header>
+
 
         <main>
             <div class="album py-5 bg-light">
                 <div class="container">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        @foreach($offres as $offre)
+                    @foreach($offres as $offre)
                             <div class="col">
                                 <div class="card shadow-sm">
-                                <img src="{{ asset('images/666.jpg') }}" class="card-img-top"  width="100%" height="225">
+                                <img src="{{ asset('images/03.jpg') }}" class="card-img-top"  width="100%" height="260">
                                 <div class="card-body">
                                         <h5 class="card-title">{{ $offre->titre }}</h5>
                                         <p class="card-text">{{ $offre->description }}</p>
-                                        <p class="card-text"> {{ $offre->date_debut }}</p>
-                                        <p class="card-text">{{ $offre->date_fin }}</p>
+                                        
+                                        <p class="card-text">{{ $offre->context }}</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <a href="/some-fixed-url" class="btn btn-sm btn-outline-secondary">Postuler</a>
+                                            <a href="{{ route('condidats.index', $offre->id) }}" class="btn btn-sm btn-outline-secondary">Postuler</a>
                                         </div>   
-                                            <small class="text-muted">9 mins</small>
+                                            
                                         </div>
                                     </div>
                                 </div>

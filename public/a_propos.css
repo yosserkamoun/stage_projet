@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:"open sans", sans-sarif;
+    box-sizing: border-box;
+}
+
+
+.about-sections{
+    background: url(https://i.pinimg.com/564x/b9/f0/43/b9f043115c6fe08b4d0a88971c9b71a6.jpg) no-repeat ;
+    background-size: 50%;
+    background-position: left , center;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 100px 0;
+
+}
+.inner-contrainer{
+    width: 50%;
+    float: right;
+    background-color: #fdfdfd;
+    padding: 150px;
+}
+.inner-contrainer h1{
+    margin-bottom:30px;
+    font-size :30px;
+    font-weight: 900;
+
+} 
+
+.skills{ 
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 13px;
+
+
+}
